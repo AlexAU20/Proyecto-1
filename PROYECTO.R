@@ -28,7 +28,7 @@ data_clima <-
 
 #GRAFICO DE HISTOGRAMAS
 
-k<- ggplot(data_clima,aes(y=lluvia,group = 1))+geom_histogram(
+k<- ggplot(data_clima,aes(x=lluvia,group = 1))+geom_histogram(
   col = "#CCFFFF",
   fill = "#6699CC"
 ) + 
@@ -41,7 +41,7 @@ k<- ggplot(data_clima,aes(y=lluvia,group = 1))+geom_histogram(
     axis = "y",
     grid = "Y,y"
   )
-l <- ggplot(data_clima, aes(y = humedad, group = 1)) +
+l <- ggplot(data_clima, aes(x = humedad, group = 1)) +
   geom_histogram(
     col = "#CCFFFF",
                  fill = "#6699CC") +
@@ -55,7 +55,7 @@ l <- ggplot(data_clima, aes(y = humedad, group = 1)) +
     grid = "Y,y"
   )
 m <-
-  ggplot(data_clima, aes(y = t_celcius, group = 1)) + 
+  ggplot(data_clima, aes(x = t_celcius, group = 1)) + 
   geom_histogram(col = "#CCFFFF",
                  fill = "#FF9900") +
   ggtitle("Cantidad de temperatura") +
@@ -67,7 +67,7 @@ m <-
     axis = "y",
     grid = "Y,y"
   )
-n <- ggplot(data_clima, aes(y= vel_viento, group = 1))+
+n <- ggplot(data_clima, aes(x= vel_viento, group = 1))+
   geom_histogram(col = "#CCFFFF",
   fill = "#CC9966") +
   ggtitle("Velocidad del viento") +
@@ -79,7 +79,7 @@ n <- ggplot(data_clima, aes(y= vel_viento, group = 1))+
     axis = "y",
     grid = "Y,y"
   )
-o <- ggplot(data_clima, aes(y= evaporacion, group = 1))+geom_histogram(
+o <- ggplot(data_clima, aes(x= evaporacion, group = 1))+geom_histogram(
   col = "#CCFFFF",
   fill = "#669966") +
   ggtitle("Cantidad de evaporacion") +
@@ -91,7 +91,7 @@ o <- ggplot(data_clima, aes(y= evaporacion, group = 1))+geom_histogram(
     axis = "y",
     grid = "Y,y"
   )
-p <- ggplot(data_clima, aes(y= irradiacion, group = 1))+
+p <- ggplot(data_clima, aes(x= irradiacion, group = 1))+
   geom_histogram(col = "#CCFFFF",
   fill = "#FFFF33") +
   ggtitle("Cantidad de irradiacion") +

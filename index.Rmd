@@ -55,7 +55,7 @@ datos <-
 
 ## Panel I
 
-A partir de los datos fuente se crean los siguientes paneles,representados en histragamas:
+A partir de los datos fuente se crean los siguientes paneles,representados en histogramas:
 
 ```{r fig.height=10, fig.width=10, message=FALSE, warning=FALSE}
 k<- ggplot(data_clima,aes(y=lluvia,group = 1))+geom_histogram(
@@ -134,13 +134,13 @@ p <- ggplot(data_clima, aes(y= irradiacion, group = 1))+
     grid = "Y,y"
   )
 
-grid.arrange(k,l,m,n,o,p,nrow = 6, ncol = 1)
+grid.arrange(k,l,m,n,o,p,nrow = 2, ncol = 3)
 ```
 ## Panel II
 
 A partir de un nuevo data frame donde se promedio y sumo cierto datos, se crean los siguientes paneles a partir de un grafico de lineas:
 
-```{r fig.height=30, fig.width=30, message=FALSE, warning=FALSE}
+```{r fig.height=15, fig.width=15, message=FALSE, warning=FALSE}
 q <- ggplot(datos,aes(x=fecha,y=lluvia,group = 1))+
   geom_line(col= "#3399FF")+
   ggtitle("Lluvia por mes") +
@@ -200,7 +200,6 @@ y <- ggplot(datos,aes(x=fecha,y=vel_viento,group = 1))+
   scale_x_discrete(guide = guide_axis(n.dodge = 2))+
 xlab("") +
   ylab("Velocidad del viento(m/s)")+
-  scale_x_discrete(guide = guide_axis(n.dodge = 2))+
          geom_point()+
 theme_ipsum(
   axis_text_size = 7,
@@ -210,6 +209,7 @@ theme_ipsum(
 )
 u <- ggplot(datos,aes(x=fecha,y=irradiacion,group = 1))+
   geom_line(col= "#FFFF00")+
+    scale_x_discrete(guide = guide_axis(n.dodge = 2))+
   ggtitle("Irradiacion por mes")+
 xlab("Meses a partir de 2016 hasta 2019") +
   ylab("Irradiacion((W/m2))")+
@@ -231,7 +231,7 @@ A partir de los datos fuente se crean los siguientes paneles para graficar media
 as <- ggplot(data_clima,aes(x=fecha,y=t_celcius))+geom_point(
   col = "#FF6600"
   )+
-  ggtitle("Grafico de puntos temperatura")+
+  ggtitle("Temperatura")+
   xlab("") +
   ylab("Temperatura(℃)")+
   geom_point()+
@@ -244,7 +244,7 @@ as <- ggplot(data_clima,aes(x=fecha,y=t_celcius))+geom_point(
 ad <- ggplot(data_clima,aes(x=fecha,y=lluvia))+geom_point(
   col = "#33CCFF"
 )+
-  ggtitle("Grafico de puntos lluvia")+
+  ggtitle("Lluvia")+
   xlab("") +
   ylab("Lluvia (mm)")+
   geom_point()+
@@ -257,7 +257,7 @@ ad <- ggplot(data_clima,aes(x=fecha,y=lluvia))+geom_point(
 af <- ggplot(data_clima,aes(x=fecha,y=humedad))+geom_point(
   col = "#99FFCC"
 )+
-  ggtitle("Grafico de puntos humedad")+
+  ggtitle("Humedad")+
   xlab("") +
   ylab("Humedad (%)")+
   geom_point()+
@@ -270,7 +270,7 @@ af <- ggplot(data_clima,aes(x=fecha,y=humedad))+geom_point(
 ag <- ggplot(data_clima,aes(x=fecha,y=vel_viento))+geom_point(
   col = "#FF99FF"
 )+
-  ggtitle("Grafico de puntos velocidad del viento")+
+  ggtitle("Velocidad del viento")+
   xlab("") +
   ylab("Viento (m/s)")+
   geom_point()+
@@ -283,7 +283,7 @@ ag <- ggplot(data_clima,aes(x=fecha,y=vel_viento))+geom_point(
 ah <- ggplot(data_clima,aes(x=fecha,y=irradiacion))+geom_point(
   col = "#FFFF33"
 )+
-  ggtitle("Grafico de puntos irradiacion")+
+  ggtitle("Irradiacion")+
   xlab("") +
   ylab("Irradiacion (W/m2)")+
   geom_point()+
@@ -296,7 +296,7 @@ ah <- ggplot(data_clima,aes(x=fecha,y=irradiacion))+geom_point(
 aj <- ggplot(data_clima,aes(x=fecha,y=evaporacion))+geom_point(
   col = "#663333"
 )+
-  ggtitle("Grafico de puntos velocidad del viento")+
+  ggtitle("Evaporacion")+
   xlab("Fecha") +
   ylab("Evaporacion (ml)")+
   geom_point()+
@@ -307,7 +307,7 @@ aj <- ggplot(data_clima,aes(x=fecha,y=evaporacion))+geom_point(
     grid = "Y,y"
   )
 
-grid.arrange(as,ad,af,ag,ah,aj,nrow = 6, ncol = 1)
+grid.arrange(as,ad,af,ag,ah,aj,nrow = 2, ncol = 3)
 ```
 
 
